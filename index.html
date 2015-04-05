@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy to Clipboard</title>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.zclip.js"></script>
+<script >
+$(document).ready(function() {
+	  alert($('#toclip').text());
+	  $("#copy-link-wrap").zclip({
+		path: 'ZeroClipboard.swf',
+		copy: $('#toclip').text(),
+		afterCopy: function() {
+		  // console.log('copied');
+		  alert('Data in clipboard! Now you can paste it somewhere');
+		}
+	  });
+});</script>
+
+</head>
+<body>
+ <h4>Clipboard test - JavaScript</h4>
+  <div href="#" id="copy-link-wrap">
+    <span name="toclip" id="toclip">test</span>
+    <br/>
+    <button id="copy-link" style="cursor:hand">Copy to clipboard</button>
+  </div>
+</body>
+</html>
